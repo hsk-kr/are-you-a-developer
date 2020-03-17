@@ -1,0 +1,138 @@
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .title-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    height: 200px;
+
+    .title {
+      font-weight: normal;
+    }
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    div {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      label {
+        width: 350px;
+        text-align: center;
+        color: var(--menuLabelColor);
+        background-color: var(--menuLabelBackgroundColor);
+        box-shadow: 1px 2px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+
+        &:hover,
+        &:active {
+          cursor: pointer;
+          color: var(--menuLabelActiveColor);
+        }
+      }
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .main-container {
+    .title-box {
+      .title {
+        font-size: 2em;
+      }
+    }
+
+    .menu {
+      label {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main-container {
+    .title-box {
+      .title {
+        font-size: 3em;
+      }
+    }
+
+    .menu {
+      label {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .main-container {
+    .title-box {
+      .title {
+        font-size: 4em;
+      }
+    }
+
+    .menu {
+      label {
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .main-container {
+    .title-box {
+      .title {
+        font-size: 5em;
+      }
+    }
+
+    .menu {
+      label {
+        font-size: 3em;
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .main-container {
+    .title-box {
+      .title {
+        font-size: 6em;
+      }
+    }
+
+    .menu {
+      label {
+        font-size: 3.5em;
+      }
+    }
+  }
+}
