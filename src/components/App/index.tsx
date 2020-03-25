@@ -1,18 +1,14 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles.scss";
 import { ThemeContext, defaultThemeContext } from "../../contexts/ThemeContext";
-import { LanguageContext, defaultLanguageContext} from "../../contexts/LanguageContext";
+import LanguageProvider from "../../contexts/providers/LanguageProvider";
 import Main from "../Main";
 import Setting from "../Setting";
 
 const App = () => {
   return (
-    <LanguageContext.Provider value={defaultLanguageContext}>
+    <LanguageProvider>
       <ThemeContext.Provider value={defaultThemeContext}>
         <Router>
           <Switch>
@@ -25,7 +21,7 @@ const App = () => {
           </Switch>
         </Router>
       </ThemeContext.Provider>
-    </LanguageContext.Provider>
+    </LanguageProvider>
   );
 };
 

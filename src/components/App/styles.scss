@@ -4,3 +4,80 @@ body,
   margin: 0;
   height: 100%;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dft-btn {
+  width: 350px;
+  text-align: center;
+  color: var(--menuLabelColor);
+  background-color: var(--menuLabelBackgroundColor);
+  box-shadow: 1px 2px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    color: var(--menuLabelActiveColor);
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .rh1 {
+    font-size: 2em;
+  }
+
+  .rh2 {
+    font-size: 1em;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .rh1 {
+    font-size: 3em;
+  }
+
+  .rh2 {
+    font-size: 1.5em;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .rh1 {
+    font-size: 4em;
+  }
+
+  .rh2 {
+    font-size: 2em;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .rh1 {
+    font-size: 5em;
+  }
+
+  .rh2 {
+    font-size: 3em;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .rh1 {
+    font-size: 6em;
+  }
+
+  .rh2 {
+    font-size: 3.5em;
+  }
+}

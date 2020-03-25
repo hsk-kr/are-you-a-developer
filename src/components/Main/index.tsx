@@ -6,8 +6,8 @@ import { LanguageContext, languages } from "../../contexts/LanguageContext";
 
 const Main = (): React.ReactElement => {
   const themeContext = useContext(ThemeContext);
-  const {lang} = useContext(LanguageContext);
-  const {title, menuStart, menuHistory, menuSetting} = languages[lang];
+  const { lang } = useContext(LanguageContext);
+  const { title, menuStart, menuHistory, menuSetting } = languages[lang];
 
   useEffect(() => {
     themeContext.setTheme(themeContext.themeName);
@@ -16,18 +16,22 @@ const Main = (): React.ReactElement => {
   return (
     <div className="main-container">
       <div className="title-box">
-        <h1 className="title">{title}</h1>
+        <h1 className="title rh1">{title}</h1>
       </div>
       <div className="menu">
         <div className="menu-start">
-          <label>{menuStart}</label>
+          <Link to="/setting" className="dft-btn rh2">
+            {menuStart}
+          </Link>
         </div>
         <div className="menu-history">
-          <label>{menuHistory}</label>
+          <Link to="/setting" className="dft-btn rh2">
+            {menuHistory}
+          </Link>
         </div>
         <div className="menu-setting">
-          <Link to="/setting">
-            <label>{menuSetting}</label>
+          <Link to="/setting" className="dft-btn rh2">
+            {menuSetting}
           </Link>
         </div>
       </div>
