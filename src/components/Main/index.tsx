@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./styles.scss";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { LanguageContext, languages } from "../../contexts/LanguageContext";
@@ -25,7 +26,9 @@ const Main = (): React.ReactElement => {
           <label>{menuHistory}</label>
         </div>
         <div className="menu-setting">
-          <label>{menuSetting}</label>
+          <Link to="/setting">
+            <label>{menuSetting}</label>
+          </Link>
         </div>
       </div>
     </div>
