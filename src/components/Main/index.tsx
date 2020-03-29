@@ -7,7 +7,13 @@ import { LanguageContext, languages } from "../../contexts/LanguageContext";
 const Main = (): React.ReactElement => {
   const themeContext = useContext(ThemeContext);
   const { lang } = useContext(LanguageContext);
-  const { title, menuStart, menuHistory, menuSetting } = languages[lang];
+  const {
+    title,
+    menuStart,
+    menuHistory,
+    menuSetting,
+    notSupported
+  } = languages[lang];
 
   useEffect(() => {
     themeContext.setTheme(themeContext.themeName);
@@ -24,8 +30,8 @@ const Main = (): React.ReactElement => {
             {menuStart}
           </Link>
         </div>
-        <div className="menu-history">
-          <Link to="/setting" className="dft-btn rh2">
+        <div className="menu-history" onClick={() => alert(notSupported)}>
+          <Link to="." className="dft-btn rh2">
             {menuHistory}
           </Link>
         </div>

@@ -7,6 +7,7 @@ export type Language = {
   menuSetting: string;
   backButton: string;
   changeLanguage: string;
+  notSupported: string;
 };
 
 export type Languages = {
@@ -26,7 +27,8 @@ export const languages: Languages = {
     menuHistory: "플레이 내역",
     menuSetting: "설정",
     backButton: "뒤로가기",
-    changeLanguage: "언어 변경"
+    changeLanguage: "언어 변경",
+    notSupported: "아직 지원하지 않습니다."
   },
   en: {
     title: "Are you a developer?",
@@ -34,7 +36,8 @@ export const languages: Languages = {
     menuHistory: "HISTORY",
     menuSetting: "SETTING",
     backButton: "BACK",
-    changeLanguage: "Change Language"
+    changeLanguage: "Change Language",
+    notSupported: "Not supported yet."
   }
 };
 
