@@ -20,7 +20,7 @@ const Main = (): React.ReactElement => {
       </div>
       <div className="menu">
         <div className="menu-start">
-          <Link to="/setting" className="dft-btn rh2">
+          <Link to="/game" className="dft-btn rh2">
             {menuStart}
           </Link>
         </div>

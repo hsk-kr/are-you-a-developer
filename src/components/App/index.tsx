@@ -5,6 +5,7 @@ import { ThemeContext, defaultThemeContext } from "../../contexts/ThemeContext";
 import LanguageProvider from "../../contexts/providers/LanguageProvider";
 import Main from "../Main";
 import Setting from "../Setting";
+import Game from "../Game";
 
 const App = () => {
   return (
@@ -12,6 +13,9 @@ const App = () => {
       <ThemeContext.Provider value={defaultThemeContext}>
         <Router>
           <Switch>
+            <Route path="/game" exact>
+              <Game />
+            </Route>
             <Route path="/setting" exact>
               <Setting />
             </Route>
