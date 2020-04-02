@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles.scss";
+import "animate.css";
 import { ThemeContext, defaultThemeContext } from "../../contexts/ThemeContext";
 import LanguageProvider from "../../contexts/providers/LanguageProvider";
 import Main from "../Main";

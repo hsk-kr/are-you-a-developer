@@ -22,7 +22,7 @@ const Main = (): React.ReactElement => {
   return (
     <div className="main-container">
       <div className="title-box">
-        <h1 className="title rh1">{title}</h1>
+        <h1 className="title rh1 animated infinite bounce">{title}</h1>
       </div>
       <div className="menu">
         <div className="menu-start">
