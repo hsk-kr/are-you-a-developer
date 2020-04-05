@@ -1,0 +1,20 @@
+.game-result-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .game-result-box {
+    width: 300px;
+    padding: 50px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: var(--resultTextColor);
+    background-color: var(--menuLabelBackgroundColor);
+    box-shadow: 1px 3px #efefef;
+    border-radius: 15px;
+  }
+}

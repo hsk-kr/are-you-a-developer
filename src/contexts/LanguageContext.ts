@@ -8,6 +8,14 @@ export type Language = {
   backButton: string;
   changeLanguage: string;
   notSupported: string;
+  resultTitle: string;
+  numberOfTotalQuestions: string;
+  numberOfCorrectAnswers: string;
+  numberOfIncorrectAnswers: string;
+  perfectScoreTitle: string;
+  goodSCoreTitle: string;
+  badScoreTitle: string;
+  redirectToMain: string;
 };
 
 export type Languages = {
@@ -28,7 +36,15 @@ export const languages: Languages = {
     menuSetting: "설정",
     backButton: "뒤로가기",
     changeLanguage: "언어 변경",
-    notSupported: "아직 지원하지 않습니다."
+    notSupported: "아직 지원하지 않습니다.",
+    resultTitle: "문제 결과",
+    numberOfTotalQuestions: "총 문제 횟수",
+    numberOfCorrectAnswers: "맞은 문제 횟수",
+    numberOfIncorrectAnswers: "틀린 문제 횟수",
+    perfectScoreTitle: "안녕하세요! 개발자님!",
+    goodSCoreTitle: "ㅋㅋㅋㅋㅋㅋㅋㅋ개발자는 아니고 뉘신지",
+    badScoreTitle: "ㅋㅋㅋㅋ 문과는 가라",
+    redirectToMain: "시작화면으로"
   },
   en: {
     title: "Are you a developer?",
@@ -37,7 +53,15 @@ export const languages: Languages = {
     menuSetting: "SETTING",
     backButton: "BACK",
     changeLanguage: "Change Language",
-    notSupported: "Not supported yet."
+    notSupported: "Not supported yet.",
+    resultTitle: "Result",
+    numberOfTotalQuestions: "Number of questions",
+    numberOfCorrectAnswers: "Number of correct answers",
+    numberOfIncorrectAnswers: "Nubmer of incorrect answers",
+    perfectScoreTitle: "Hi! Developer!",
+    goodSCoreTitle: "?? Why did you take this test? get out of here.",
+    badScoreTitle: "Go away. Don't take this test anymore.",
+    redirectToMain: "To Main"
   }
 };
 

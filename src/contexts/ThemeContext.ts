@@ -14,6 +14,7 @@ export type Theme = {
   menuLabelBackgroundColor: string;
   menuLabelColor: string;
   menuLabelActiveColor: string;
+  resultTextColor: string;
 };
 
 export type Themes = {
@@ -29,7 +30,8 @@ export const theme: Themes = {
   white: {
     menuLabelBackgroundColor: "#ecf0f1",
     menuLabelColor: "#ffffff",
-    menuLabelActiveColor: "#a4b0be"
+    menuLabelActiveColor: "#a4b0be",
+    resultTextColor: "#636e72"
   }
 };
 
