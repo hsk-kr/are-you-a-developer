@@ -90,7 +90,7 @@ const Game = () => {
       <div className="time-container">
         <div className="time-icon-box">
           <img
-            src="/images/game/game-clock.png"
+            src={`${process.env.PUBLIC_URL}/images/game/game-clock.png`}
             alt="Clock Icon"
             className="clock-icon animated infinite swing delay-1s"
           />
