@@ -1,5 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import { QuestionsContext, questions } from "../../contexts/QuestionsContext";
+import {
+  QuestionsContext,
+  Question,
+  questions
+} from "../../contexts/QuestionsContext";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import "./styles.scss";
 import { Redirect } from "react-router-dom";
@@ -27,12 +31,14 @@ const Game = () => {
     QuestionsContext
   );
   const { lang } = useContext(LanguageContext);
-  const [progressWidthPercentage, setProgressWidthPercentage] = useState(100);
-  const [isGameEnd, gameEnd] = useState(false);
-  const [correctAnswerNum, setCorrectAnswerNum] = useState(0);
-  const [totalQuestionNum, setTotalQuestionNum] = useState(0);
-  const [questionObj, setQuestionObj] = useState(null);
-  const [randNumList, setRandNumList] = useState([0, 1, 2, 3]);
+  const [progressWidthPercentage, setProgressWidthPercentage] = useState<
+    number
+  >(100);
+  const [isGameEnd, gameEnd] = useState<boolean>(false);
+  const [correctAnswerNum, setCorrectAnswerNum] = useState<number>(0);
+  const [totalQuestionNum, setTotalQuestionNum] = useState<number>(0);
+  const [questionObj, setQuestionObj] = useState<Question | null>(null);
+  const [randNumList, setRandNumList] = useState<number[]>([0, 1, 2, 3]);
 
   const checkAnswer = awNum => {
     setTotalQuestionNum(totalQuestionNum + 1);
@@ -63,12 +69,16 @@ const Game = () => {
         setProgressWidthPercentage(progressWidthPercentage - 0.1);
       }, 10);
     } else {
-      // gameEnd(true);
+      gameEnd(true);
     }
   }, [progressWidthPercentage]);
 
   if (isGameEnd) {
-    return <Redirect to={"game-result"} />;
+    return (
+      <Redirect
+        to={`game-result?total=${totalQuestionNum}&cn=${correctAnswerNum}`}
+      />
+    );
   }
 
   if (questionObj === null) {
