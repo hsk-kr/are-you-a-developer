@@ -65,11 +65,15 @@ const Game = () => {
   // change progress and process to finish the game
   useEffect(() => {
     if (progressWidthPercentage > 0) {
-      setTimeout(() => {
+      const tmProgress = setTimeout(() => {
         setProgressWidthPercentage(progressWidthPercentage - 0.1);
       }, 10);
     } else {
       gameEnd(true);
+    }
+
+    return () => {
+      clearTimeout(tmProgress);
     }
   }, [progressWidthPercentage]);
 
@@ -79,9 +83,7 @@ const Game = () => {
         to={`game-result?total=${totalQuestionNum}&cn=${correctAnswerNum}`}
       />
     );
-  }
-
-  if (questionObj === null) {
+  } else if (questionObj === null) {
     return null;
   }
 

@@ -37,10 +37,12 @@ const GameResult = () => {
     const total: number = Number(query.get("total"));
     const cn: number = Number(query.get("cn"));
 
-    if (total >= 10 && total === cn) {
-      setResultText(perfectScoreTitle);
-    } else if (total === cn) {
-      setResultText(goodSCoreTitle);
+    if (total === cn) {
+      if (total >= 10) {  
+        setResultText(perfectScoreTitle);
+      } else {
+        setResultText(goodSCoreTitle);
+      }
     } else {
       setResultText(badScoreTitle);
     }
@@ -58,9 +60,7 @@ const GameResult = () => {
 
   if (hasError) {
     return <Redirect to="/" />;
-  }
-
-  if (loading) {
+  } else if (loading) {
     return null;
   }
 
