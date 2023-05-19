@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import {
   QuestionsContext,
   Question,
-  questions
+  questions,
 } from "../../contexts/QuestionsContext";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import "./styles.scss";
@@ -27,20 +27,18 @@ const generateRandNumList = (srtN: number, endN: number): number[] => {
 };
 
 const Game = () => {
-  const { changeIdxRandomly, currentQuestionIdx } = useContext(
-    QuestionsContext
-  );
+  const { changeIdxRandomly, currentQuestionIdx } =
+    useContext(QuestionsContext);
   const { lang } = useContext(LanguageContext);
-  const [progressWidthPercentage, setProgressWidthPercentage] = useState<
-    number
-  >(100);
+  const [progressWidthPercentage, setProgressWidthPercentage] =
+    useState<number>(100);
   const [isGameEnd, gameEnd] = useState<boolean>(false);
   const [correctAnswerNum, setCorrectAnswerNum] = useState<number>(0);
   const [totalQuestionNum, setTotalQuestionNum] = useState<number>(0);
   const [questionObj, setQuestionObj] = useState<Question | null>(null);
   const [randNumList, setRandNumList] = useState<number[]>([0, 1, 2, 3]);
 
-  const checkAnswer = awNum => {
+  const checkAnswer = (awNum) => {
     setTotalQuestionNum(totalQuestionNum + 1);
 
     if (awNum === questions[lang][currentQuestionIdx].answerIdx) {
@@ -64,8 +62,10 @@ const Game = () => {
 
   // change progress and process to finish the game
   useEffect(() => {
+    let tmProgress = undefined;
+
     if (progressWidthPercentage > 0) {
-      const tmProgress = setTimeout(() => {
+      tmProgress = setTimeout(() => {
         setProgressWidthPercentage(progressWidthPercentage - 0.1);
       }, 10);
     } else {
@@ -73,8 +73,8 @@ const Game = () => {
     }
 
     return () => {
-      clearTimeout(tmProgress);
-    }
+      tmProgress && clearTimeout(tmProgress);
+    };
   }, [progressWidthPercentage]);
 
   if (isGameEnd) {
